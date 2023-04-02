@@ -22,7 +22,10 @@ mongoose
     err.message;
   });
 app.post("/payment/success", async (req, res) => {
-  res.redirect("http://localhost:3001/success");
+  res.redirect("https://asssunnah-foundation-clone.vercel.app/success");
+});
+app.post("/payment/cancel", async (req, res) => {
+  res.redirect("https://asssunnah-foundation-clone.vercel.app/cancel");
 });
 
 app.use("/img", imgRoute);

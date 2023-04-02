@@ -18,9 +18,9 @@ router.post("/chekcout", async (req, res) => {
     total_amount: amaount,
     currency: "BDT",
     tran_id: transctionId, // use unique tran_id for each api call
-    success_url: "http://localhost:3000/payment/success",
+    success_url: "https://asssunnahfoundation.onrender.com/payment/success",
     fail_url: "http://localhost:3000/payment/fail",
-    cancel_url: "http://localhost:3000/payment/cancel",
+    cancel_url: "https://asssunnahfoundation.onrender.com/payment/cancel",
     ipn_url: "http://localhost:3030/ipn",
     shipping_method: "Courier",
     product_name: "Computer.",
