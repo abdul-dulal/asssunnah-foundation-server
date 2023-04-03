@@ -10,6 +10,7 @@ const imgRoute = require("./router/imageRouter");
 const newsRoute = require("./router/NewsRouter");
 const donateRoute = require("./router/Donateroute");
 const checkoutRoute = require("./router/checkoutRouter");
+const memberRoute = require("./router/MemberRoute");
 
 // mongoose connect
 mongoose
@@ -22,16 +23,17 @@ mongoose
     err.message;
   });
 app.post("/payment/success", async (req, res) => {
-  res.redirect("https://asssunnah-foundation-clone.vercel.app/success");
+  res.redirect("https://asssunnah-foundation.vercel.app/success");
 });
 app.post("/payment/cancel", async (req, res) => {
-  res.redirect("https://asssunnah-foundation-clone.vercel.app/cancel");
+  res.redirect("https://asssunnah-foundation.vercel.app/cancel");
 });
 
 app.use("/img", imgRoute);
 app.use("/news", newsRoute);
 app.use("/donate", donateRoute);
 app.use("/checkout", checkoutRoute);
+app.use("/member", memberRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello World");

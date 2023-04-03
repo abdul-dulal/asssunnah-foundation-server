@@ -11,7 +11,7 @@ const store_passwd = "abc641ff4404b4af@ssl";
 const is_live = false;
 
 router.post("/chekcout", async (req, res) => {
-  const { email, amaount, category } = req.body;
+  const { email, amaount } = req.body;
 
   const transctionId = "acd124578ff"; //new ObjectId().toSrting();
   const data = {
@@ -45,14 +45,15 @@ router.post("/chekcout", async (req, res) => {
     ship_country: "Bangladesh",
   };
 
-  const checkout = new Checkout(req.body);
+  // const checkout = new Checkout(req.body);
 
   try {
-    await checkout.save();
+    // await checkout.save();
     const sslcz = new SSLCommerzPayment(store_id, store_passwd, is_live);
     sslcz.init(data).then((apiResponse) => {
       // Redirect the user to payment gateway
       let GatewayPageURL = apiResponse.GatewayPageURL;
+
       res.send({ url: GatewayPageURL });
     });
   } catch (err) {
